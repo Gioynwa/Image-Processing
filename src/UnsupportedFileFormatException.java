@@ -1,5 +1,3 @@
-package ce325.hw2;
-
 /*Exception class*/
 
 public class UnsupportedFileFormatException extends java.lang.Exception {

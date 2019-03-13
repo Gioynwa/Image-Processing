@@ -1,5 +1,3 @@
-package ce325.hw2;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;

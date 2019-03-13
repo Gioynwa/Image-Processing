@@ -1,19 +1,17 @@
-package ce325.hw2;
-
 import java.io.*;
 import java.util.*;
 
 public class PPMImageStacker {
-	
+
 	public List<PPMImage> list = new ArrayList<PPMImage>();
 	public PPMImage stackedImg;
-	
+
 	/*constructor*/
-	
+
 	public PPMImageStacker(java.io.File dir) throws FileNotFoundException, UnsupportedFileFormatException {
-		
+
 		/*checks if the given file exists and is a directory*/
-		
+
 		if(!dir.exists()) {
 			throw new FileNotFoundException("[ERROR] " + dir + " does not exist!");
 		}
@@ -21,10 +19,10 @@ public class PPMImageStacker {
 		if(!dir.isDirectory()) {
 			throw new FileNotFoundException("[ERROR] " + dir + " is not a directory!");
 		}
-		
+
 		/*creating an array with the contents of the given directory*/
 		File [] files = dir.listFiles();
-		
+
 		/*creating a list with PPM images from the files array*/
 		for(File el: files) {
 
@@ -32,9 +30,9 @@ public class PPMImageStacker {
 			list.add(new PPMImage(el));
 		}
 	}
-	
+
 	/*implement stack algorithm*/
-	
+
 	public void stack() {
 
 		int height = list.get(0).height;
@@ -51,7 +49,7 @@ public class PPMImageStacker {
 					newRed += list.get(k).pixels[i][j].getRed();
 					newGreen += list.get(k).pixels[i][j].getGreen();
 					newBlue += list.get(k).pixels[i][j].getBlue();
-			
+
 				}
 
 				newRed = clip(newRed / list.size(), colordepth);
@@ -72,7 +70,7 @@ public class PPMImageStacker {
 	}
 
 	/*clip method*/
-	
+
 	public short clip(int x, int colordepth) {
 		if(x > colordepth) {
 			x = colordepth;
@@ -82,5 +80,5 @@ public class PPMImageStacker {
 		}
 		return (short)x;
 	}
-	
+
 }

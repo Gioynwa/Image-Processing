@@ -1,17 +1,15 @@
-package ce325.hw2;
-
 public class RGBPixel {
 
 	private int pixel;
-    
+
     /*constructor*/
-    
+
 	public RGBPixel(short red, short green, short blue) {
 		setRed(red);
 		setGreen(green);
 		setBlue(blue);
 	}
-	
+
 	/*copy constructor*/
 
 	public RGBPixel(RGBPixel pixel) {
@@ -19,7 +17,7 @@ public class RGBPixel {
 		setGreen(pixel.getGreen());
 		setBlue(pixel.getBlue());
 	}
-	
+
 	/*copy from YUVPixel constructor*/
 
 	public RGBPixel(YUVPixel pixel) {
@@ -31,7 +29,7 @@ public class RGBPixel {
 		setGreen(clip(( 298 * C - 100 * D - 208 * E + 128) >> 8));
 		setBlue(clip(( 298 * C + 516 * D + 128) >> 8));
 	}
-	
+
 	/*methods for getting pixel values*/
 
 	public short getRed() {
@@ -53,11 +51,11 @@ public class RGBPixel {
 		int res = pixel & temp;
 		return (short)res;
 	}
-	
+
 	public int getPixel() {
 		return pixel;
 	}
-	
+
 	/*methods for setting pixel values*/
 
 	public void setRed(short red) {
@@ -77,9 +75,9 @@ public class RGBPixel {
 		pixel = pixel & temp;
 		pixel = blue + pixel;
 	}
-    
+
     /*clip method*/
-    
+
 	public short clip(int x) {
 		if(x > 255) {
 			x = 255;

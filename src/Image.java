@@ -1,5 +1,3 @@
-package ce325.hw2;
-
 public interface Image{
 
 	public void grayscale();

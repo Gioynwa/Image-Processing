@@ -1,5 +1,3 @@
-package ce325.hw2;
-
 import java.io.*;
 import java.util.*;
 

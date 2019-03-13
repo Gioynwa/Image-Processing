@@ -1,5 +1,3 @@
-package ce325.hw2;
-
 import java.io.*;
 import java.util.*;
 
@@ -10,9 +8,9 @@ public class Histogram {
 	private int numOfPixels;
 	private YUVImage img;
     private static final int MAX_LUM = 235;
-    
+
 	/*constructor*/
-	
+
 	public Histogram(YUVImage img) {
 
 		this.img = img;
@@ -33,7 +31,7 @@ public class Histogram {
 		}
 
 	}
-	
+
 	/*writing the histogram into a string*/
 
 	public String toString() {
@@ -66,16 +64,16 @@ public class Histogram {
 
 		return sBuffer.toString();
 	}
-	
+
 	/*writing the string into a file*/
 
 	public void toFile(File file) {
 
 		FileWriter out = null;
 		PrintWriter pw = null;
-	
+
 		try {
-		
+
 			out = new FileWriter(file);
 			pw = new PrintWriter(out);
 
@@ -93,9 +91,9 @@ public class Histogram {
 		}
 
 	}
-    
+
     /*method to equalize the histogram*/
-    
+
 	public void equalize() {
 
 		tuner = new int[236];
@@ -106,22 +104,22 @@ public class Histogram {
 		for(int i = 0; i < temp.length; i++) {
 			temp[i] = histogram[i];
 		}
-        
+
         //possibility distribution
 		for(int i = 0; i < temp.length; i++) {
 			temp[i] = temp[i] / numOfPixels;
 		}
-        
+
         //cumulative possibility distribution
 		for(int i = 1; i < temp.length; i++) {
 			temp[i] = temp[i] + temp[i-1];
 		}
-        
+
         //multiply cumulative possibility distribution with max luminocity
 		for(int i = 0; i < histogram.length; i++) {
 			tuner[i] = (int)(temp[i] * MAX_LUM);
 		}
-        
+
         //equalized image creation
 		for(int i = 0; i < tuner.length; i++) {
 			for(int j = 0; j < img.height; j++) {
@@ -132,13 +130,13 @@ public class Histogram {
 				}
 			}
 		}
-        
+
 		for(int i = 0; i < histogram.length; i++) {
 			mid[tuner[i]] = histogram[i];
 		}
 
 		histogram = mid;
-		
+
 		img = newImg;
 	}
 
@@ -150,6 +148,6 @@ public class Histogram {
 
 		return (short)tuner[luminocity];
 	}
-	
+
 
 }

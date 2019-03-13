@@ -1,27 +1,25 @@
-package ce325.hw2;
-
 public class YUVPixel {
 
 	private int pixel;
-    
+
     /*constructor*/
-    
+
 	public YUVPixel(short Y, short U, short V) {
 		setY(Y);
 		setU(U);
 		setV(V);
 	}
-    
+
     /*copy constructor*/
-    
+
 	public YUVPixel(YUVPixel pixel) {
 		setY(pixel.getY());
 		setU(pixel.getU());
 		setV(pixel.getV());
 	}
-    
+
     /*copy from RGBPixel constructor*/
-    
+
 	public YUVPixel(RGBPixel pixel) {
 		short R = pixel.getRed();
 		short G = pixel.getGreen();
@@ -31,7 +29,7 @@ public class YUVPixel {
 		setU((short)(((-38 * R - 74 * G + 112 * B + 128) >> 8) + 128));
 		setV((short)(((112 * R - 94 * G - 18 * B + 128) >> 8) + 128));
 	}
-	
+
 	/*methods for getting pixel values*/
 
 	public short getY() {
@@ -53,7 +51,7 @@ public class YUVPixel {
 		int res = pixel & temp;
 		return (short)res;
 	}
-	
+
 	/*methods for setting pixel values*/
 
 	public void setY(short Y) {

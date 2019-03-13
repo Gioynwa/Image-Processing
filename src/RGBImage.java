@@ -1,16 +1,14 @@
-package ce325.hw2;
-
 public class RGBImage implements Image{
 
 	public int width, height, colordepth;
 	public RGBPixel [][] pixels;
 
 	/*default constructor*/
-	
+
 	public RGBImage() {}
 
 	/*constructor*/
-	
+
 	public RGBImage(int width, int height, int colordepth) {
 
 		this.width = width;
@@ -22,9 +20,9 @@ public class RGBImage implements Image{
 				pixels[i][j] = new RGBPixel( (short)0, (short)0, (short)0 );
 			}
 		}
-				
+
 	}
-	
+
 	/*copy constructor*/
 
 	public RGBImage(RGBImage copyImg) {
@@ -40,7 +38,7 @@ public class RGBImage implements Image{
 		}
 
 	}
-	
+
 	/*copy from YUVImage constructor*/
 
 	public RGBImage(YUVImage YUVImg) {
@@ -56,9 +54,9 @@ public class RGBImage implements Image{
 		}
 
 	}
-    
+
     /*grayscale method*/
-    
+
 	public void grayscale() {
 
 		short grey;
@@ -72,7 +70,7 @@ public class RGBImage implements Image{
 			}
 		}
 	}
-	
+
 	/*doublesize method*/
 
 	public void doublesize() {
@@ -84,7 +82,7 @@ public class RGBImage implements Image{
 
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
-				
+
 				newPixels[2 * i][2 * j] = new RGBPixel(pixels[i][j]);
 				newPixels[2 * i + 1][2 * j] = new RGBPixel(pixels[i][j]);
 				newPixels[2 * i][2 * j + 1] = new RGBPixel(pixels[i][j]);
@@ -99,7 +97,7 @@ public class RGBImage implements Image{
 	}
 
 	/*halfsize method*/
-	
+
 	public void halfsize() {
 
 		int newWidth = width / 2;
@@ -125,7 +123,7 @@ public class RGBImage implements Image{
 	}
 
 	/*rotateClockwise method*/
-	
+
 	public void rotateClockwise() {
 
 		int newWidth = height;
