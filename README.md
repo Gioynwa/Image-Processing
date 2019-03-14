@@ -1,7 +1,7 @@
 # Image Processing (GUI)
 
 ## Description
-Java program for processing [PPM](https://en.wikipedia.org/wiki/Netpbm_format#PPM_example) and [YUM](https://en.wikipedia.org/wiki/YUV) images. It can perform the following actions:
+Java program for processing [PPM](https://en.wikipedia.org/wiki/Netpbm_format#PPM_example) and [YUV](https://en.wikipedia.org/wiki/YUV) images. It can perform the following actions:
 1. Greyscale
 2. Increase Size
 3. Decrease Size
