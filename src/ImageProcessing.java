@@ -49,7 +49,7 @@ public class ImageProcessing extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+				fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 				fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("PPM Images","ppm"));
 				int result = fileChooser.showOpenDialog(openPPM);
 				if (result == JFileChooser.APPROVE_OPTION) {
@@ -81,7 +81,7 @@ public class ImageProcessing extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+				fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 				fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("YUV Images","yuv"));
 				int result = fileChooser.showOpenDialog(openYUV);
 				if (result == JFileChooser.APPROVE_OPTION) {
@@ -121,7 +121,7 @@ public class ImageProcessing extends JFrame {
 				}
 
 				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+				fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 				int result = fileChooser.showSaveDialog(savePPM);
 				if (result == JFileChooser.APPROVE_OPTION) {
 					File selectedFile = fileChooser.getSelectedFile();
@@ -144,7 +144,7 @@ public class ImageProcessing extends JFrame {
 				}
 
 				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+				fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 				int result = fileChooser.showSaveDialog(saveYUV);
 				if (result == JFileChooser.APPROVE_OPTION) {
 					File selectedFile = fileChooser.getSelectedFile();
@@ -267,7 +267,7 @@ public class ImageProcessing extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+				fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 				fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				int result = fileChooser.showOpenDialog(stackingMi);
 				if (result == JFileChooser.APPROVE_OPTION) {
